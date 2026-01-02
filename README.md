@@ -1,10 +1,9 @@
 # Calc API
 
 An open-source, free API designed to perform calculations using various models.
-
-> **Status:** Currently not deployed as an api.
 --
 > **docs** [devharsh001.github.io/calc-api/](https://devharsh001.github.io/calc-api/)
+> **Status:** Currently not deployed as an api.
 ---
 
 ### Contact & Maintenance
