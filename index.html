@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Calculator API Documentation</title>
+    <style>
+        /* A tiny bit of CSS just to make the code blocks readable, 
+           keeping the rest very raw. */
+        body {
+            font-family: serif; /* The classic "raw" web look */
+            margin: 2em;
+            line-height: 1.5;
+            max-width: 900px;
+        }
+        h1, h2 {
+            border-bottom: 2px solid black;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        .method {
+            font-weight: bold;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Index of all calculators and how to use them</h1>
+    <p>Welcome to the Open Calculator API. This API is free for everyone to use for various calculations.</p>
+    
+    <h2>Important Info</h2>
+    <ul>
+        <li><strong>Base URL (Local):</strong> <code>http://localhost:3000</code></li>
+        <li><strong>Base URL (Production):</strong> (You will replace this later when you host the backend)</li>
+        <li>All requests must use the header: <code>Content-Type: application/json</code></li>
+    </ul>
+
+    <hr>
+
+    <a href="https://github.com/DevHarsh001/calc-api/API/routes/bmi.js"><h2>1. BMI Calculator</h2></a>
+    <p>Calculates Body Mass Index and provides a health category.</p>
+
+    <ul>
+        <li><strong>Route:</strong> <code>/api/bmi/calculate</code></li>
+        <li><strong>Method:</strong> <span class="method">POST</span></li>
+    </ul>
+
+    <h3>Required JSON Body:</h3>
+    <p>You must send weight in kilograms (kg) and height in meters (m).</p>
+    <pre>{
+  "weight": 70,
+  "height": 1.75
+}</pre>
+
+    <hr>
+
+    <a href="https://github.com/DevHarsh001/calc-api/API/routes/"><h2>2. Basic Math Calculator</h2></a>
+    <p>Performs simple arithmetic operations (add, subtract, multiply, divide).</p>
+
+    <ul>
+        <li><strong>Route:</strong> <code>/api/math/calculate</code></li>
+        <li><strong>Method:</strong> <span class="method">POST</span></li>
+    </ul>
+
+    <h3>Required JSON Body:</h3>
+    <p>Provide two numbers and the operation you want to perform.</p>
+    <p><em>Valid operations: "add", "subtract", "multiply", "divide"</em></p>
+    <pre>{
+  "num1": 50,
+  "num2": 10,
+  "operation": "multiply"
+}</pre>
+
+    <hr>
+    <p><em>More calculators coming soon!</em></p>
+</body>
+</html>
