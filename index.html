@@ -47,7 +47,7 @@
 
     <hr>
 
-    <a href="https://github.com/DevHarsh001/calc-api/API/routes/bmi.js"><h2>1. BMI Calculator</h2></a>
+    <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/bmi.js"><h2>1. BMI Calculator</h2></a>
     <p>Calculates Body Mass Index and provides a health category.</p>
 
     <ul>
@@ -64,7 +64,7 @@
 
     <hr>
 
-    <a href="https://github.com/DevHarsh001/calc-api/API/routes/"><h2>2. Basic Math Calculator</h2></a>
+    <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/math.js"><h2>2. Basic Math Calculator</h2></a>
     <p>Performs simple arithmetic operations (add, subtract, multiply, divide).</p>
 
     <ul>
@@ -80,6 +80,24 @@
   "num2": 10,
   "operation": "multiply"
 }</pre>
+
+    <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/gdp.js"><h2>3. GDP Calculator</h2></a>
+    <p>Calculates Gross Domestic Product using the Expenditure Approach.</p>
+
+    <ul>
+        <li><strong>Route:</strong> <code>/api/gdp/calculate</code></li>
+        <li><strong>Method:</strong> <span class="method">POST</span></li>
+    </ul>
+
+    <h3>Required JSON Body:</h3>
+    <pre>{
+  "consumption": 1000,
+  "investment": 500,
+  "government": 400,
+  "exports": 200,
+  "imports": 300
+}</pre>
+    <hr>
 
     <hr>
     <p><em>More calculators coming soon!</em></p>

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bmiRoutes = require('./routes/bmi');
 const mathRoutes = require('./routes/math')
+const gdpRoutes = require('./routes/gdp');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,7 +18,8 @@ app.get('/', (req, res) => {
 
 // Use the BMI routes
 app.use('/api/bmi', bmiRoutes);
-app.use('api/math', mathRoutes)
+app.use('api/math', mathRoutes);
+app.use('/api/gdp', gdpRoutes);
 
 // Start the server
 app.listen(PORT, () => {
