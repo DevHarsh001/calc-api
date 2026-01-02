@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Calculator API Documentation</title>
     <style>
-        /* A tiny bit of CSS just to make the code blocks readable, 
-           keeping the rest very raw. */
+        /* Keeping the "Raw" aesthetic */
         body {
-            font-family: serif; /* The classic "raw" web look */
+            font-family: serif;
             margin: 2em;
             line-height: 1.5;
             max-width: 900px;
         }
-        h1, h2 {
-            border-bottom: 2px solid black;
+        h1 { border-bottom: 2px solid black; }
+        
+        /* Search Bar Style */
+        #searchBox {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-family: monospace;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            background-color: #fcfcfc;
+        }
+
+        /* Documentation Styles */
+        .calc-card {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
         }
         code {
             background-color: #eee;
@@ -32,74 +47,139 @@
             font-weight: bold;
             color: darkblue;
         }
+        .source-link {
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #d00;
+            text-decoration: none;
+        }
+        .source-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <h1>Index of all calculators and how to use them</h1>
-    <p>Welcome to the Open Calculator API. This API is free for everyone to use for various calculations.</p>
     
-    <h2>Important Info</h2>
-    <ul>
-        <li><strong>Base URL (Local):</strong> <code>http://localhost:3000</code></li>
-        <li><strong>Base URL (Production):</strong> (You will replace this later when you host the backend)</li>
-        <li>All requests must use the header: <code>Content-Type: application/json</code></li>
-    </ul>
+    <input type="text" id="searchBox" onkeyup="filterCalculators()" placeholder="Search for a calculator (e.g. 'GDP', 'BMI')...">
 
-    <hr>
+    <p>Welcome to the Open Calculator API. <br>
+    <strong>Base URL:</strong> <code>http://localhost:3000</code></p>
 
-    <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/bmi.js"><h2>1. BMI Calculator</h2></a>
-    <p>Calculates Body Mass Index and provides a health category.</p>
-
-    <ul>
-        <li><strong>Route:</strong> <code>/api/bmi/calculate</code></li>
-        <li><strong>Method:</strong> <span class="method">POST</span></li>
-    </ul>
-
-    <h3>Required JSON Body:</h3>
-    <p>You must send weight in kilograms (kg) and height in meters (m).</p>
-    <pre>{
+    <div class="calc-card">
+        <h2>1. BMI Calculator</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/bmi.js" class="source-link" target="_blank">[View Source Code: bmi.js]</a>
+        <p>Calculates Body Mass Index and health category.</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/bmi/calculate</code></li>
+            <li><strong>Method:</strong> <span class="method">POST</span></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
   "weight": 70,
   "height": 1.75
 }</pre>
+    </div>
 
-    <hr>
-
-    <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/math.js"><h2>2. Basic Math Calculator</h2></a>
-    <p>Performs simple arithmetic operations (add, subtract, multiply, divide).</p>
-
-    <ul>
-        <li><strong>Route:</strong> <code>/api/math/calculate</code></li>
-        <li><strong>Method:</strong> <span class="method">POST</span></li>
-    </ul>
-
-    <h3>Required JSON Body:</h3>
-    <p>Provide two numbers and the operation you want to perform.</p>
-    <p><em>Valid operations: "add", "subtract", "multiply", "divide"</em></p>
-    <pre>{
+    <div class="calc-card">
+        <h2>2. Basic Math Calculator</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/math.js" class="source-link" target="_blank">[View Source Code: math.js]</a>
+        <p>Simple arithmetic (add, subtract, multiply, divide).</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/math/calculate</code></li>
+            <li><strong>Method:</strong> <span class="method">POST</span></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
   "num1": 50,
   "num2": 10,
   "operation": "multiply"
 }</pre>
+    </div>
 
-    <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/gdp.js"><h2>3. GDP Calculator</h2></a>
-    <p>Calculates Gross Domestic Product using the Expenditure Approach.</p>
-
-    <ul>
-        <li><strong>Route:</strong> <code>/api/gdp/calculate</code></li>
-        <li><strong>Method:</strong> <span class="method">POST</span></li>
-    </ul>
-
-    <h3>Required JSON Body:</h3>
-    <pre>{
+    <div class="calc-card">
+        <h2>3. GDP Calculator</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/gdp.js" class="source-link" target="_blank">[View Source Code: gdp.js]</a>
+        <p>Gross Domestic Product (Expenditure Approach).</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/gdp/calculate</code></li>
+            <li><strong>Method:</strong> <span class="method">POST</span></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
   "consumption": 1000,
   "investment": 500,
   "government": 400,
   "exports": 200,
   "imports": 300
 }</pre>
-    <hr>
+    </div>
 
-    <hr>
-    <p><em>More calculators coming soon!</em></p>
+    <div class="calc-card">
+        <h2>4. Discount Calculator</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/discount.js" class="source-link" target="_blank">[View Source Code: discount.js]</a>
+        <p>Calculate savings and final price.</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/discount/calculate</code></li>
+            <li><strong>Method:</strong> <span class="method">POST</span></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
+  "originalPrice": 100,
+  "discountPercent": 20
+}</pre>
+    </div>
+
+    <div class="calc-card">
+        <h2>5. Simple Interest Calculator</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/interest.js" class="source-link" target="_blank">[View Source Code: interest.js]</a>
+        <p>Calculate interest earned over time.</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/interest/calculate</code></li>
+            <li><strong>Method:</strong> <span class="method">POST</span></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
+  "principal": 1000,
+  "rate": 5,
+  "time": 2
+}</pre>
+    </div>
+
+    <div class="calc-card">
+        <h2>6. Temperature Converter</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/temperature.js" class="source-link" target="_blank">[View Source Code: temperature.js]</a>
+        <p>Convert Celsius to/from Fahrenheit.</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/temperature/calculate</code></li>
+            <li><strong>Method:</strong> <span class="method">POST</span></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
+  "value": 30,
+  "from": "celsius",
+  "to": "fahrenheit"
+}</pre>
+    </div>
+
+    <script>
+        function filterCalculators() {
+            // Get the search input
+            var input = document.getElementById('searchBox');
+            var filter = input.value.toUpperCase();
+            
+            // Get all calculator cards
+            var cards = document.getElementsByClassName('calc-card');
+
+            // Loop through all cards and hide those that don't match the search
+            for (var i = 0; i < cards.length; i++) {
+                var h2 = cards[i].getElementsByTagName("h2")[0];
+                var txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
