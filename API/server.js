@@ -8,6 +8,9 @@ const gdpRoutes = require('./routes/gdp');
 const discountRoutes = require('./routes/discount');
 const interestRoutes = require('./routes/interest');
 const tempRoutes = require('./routes/temperature');
+const scientificRoutes = require('./routes/scientific');
+const billRoutes = require('./routes/bill');
+const unitRoutes = require('./routes/units');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,8 +22,8 @@ app.use(cors()); // Allow everyone to use the API
 // Welcome Route
 app.get('/', (req, res) => {
     res.json({ 
-        message: "Welcome to the Open Calculator API! 🧮", 
-        docs: "Check out index.html for documentation."
+        message: "Welcome to the Calc API! 🧮", 
+        docs: "https://devharsh001.github.io/calc-api/"
     });
 });
 
@@ -31,6 +34,9 @@ app.use('/api/gdp', gdpRoutes);
 app.use('/api/discount', discountRoutes);
 app.use('/api/interest', interestRoutes);
 app.use('/api/temperature', tempRoutes);
+app.use('/api/scientific', scientificRoutes);
+app.use('/api/bill', billRoutes);
+app.use('/api/units', unitRoutes);
 
 // Start the server
 app.listen(PORT, () => {

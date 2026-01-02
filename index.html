@@ -159,6 +159,49 @@
   "to": "fahrenheit"
 }</pre>
     </div>
+    <div class="calc-card">
+        <h2>7. Scientific Calculator</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/scientific.js" class="source-link" target="_blank">[View Source Code: scientific.js]</a>
+        <p>Advanced math functions (sin, cos, log, sqrt, pow).</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/scientific/calculate</code></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
+  "num": 90,
+  "operation": "sin"
+  // Optional: "power": 2 (if operation is 'pow')
+}</pre>
+    </div>
+
+    <div class="calc-card">
+        <h2>8. Bill Splitter</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/bill.js" class="source-link" target="_blank">[View Source Code: bill.js]</a>
+        <p>Split a restaurant bill with friends.</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/bill/calculate</code></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
+  "total": 150.00,
+  "tipPercent": 15,
+  "people": 4
+}</pre>
+    </div>
+
+    <div class="calc-card">
+        <h2>9. Unit Converter</h2>
+        <a href="https://github.com/DevHarsh001/calc-api/blob/main/API/routes/units.js" class="source-link" target="_blank">[View Source Code: units.js]</a>
+        <p>Convert common units (Length, Mass).</p>
+        <ul>
+            <li><strong>Route:</strong> <code>/api/units/calculate</code></li>
+        </ul>
+        <h3>Required JSON:</h3>
+        <pre>{
+  "value": 100,
+  "type": "meters_to_feet"
+}</pre>
+    </div>
 
     <script>
         function filterCalculators() {
